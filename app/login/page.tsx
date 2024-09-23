@@ -33,14 +33,16 @@ const SignInPage: FC = () => {
     const result = await signIn("credentials", {
       username: watch("username"),
       password: watch("password"),
+      // redirectがfalseの場合は、以下が意味がない
       callbackUrl: callbackUrl,
+      // 以下により認証結果が返えるようになる
       redirect: false,
     });
     if (result?.error) {
-      console.log("login error, error = ", result);
       setError("failed to login");
       return;
     }
+    // redirectをfalseにしているので、リダイレクトさせる
     router.push(callbackUrl);
   };
 

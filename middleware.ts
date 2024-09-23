@@ -5,8 +5,6 @@ import { NextRequestWithAuth } from "next-auth/middleware";
 
 export default withAuth((req: NextRequestWithAuth) => {
   const pathname = req.nextUrl.pathname;
-  console.log("pathname = ", pathname);
-  console.log("token = ", req.nextauth.token);
 
   if (pathname.startsWith("/admin") && req.nextauth.token?.role !== "admin") {
     return NextResponse.rewrite(new URL("/404", req.url));
