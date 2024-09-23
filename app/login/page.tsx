@@ -61,7 +61,7 @@ const SignInPage: FC = () => {
         )}
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="w-full max-w-sm border border-gray-300 shadow rounded-xl m-3 p-3">
+          className="w-full max-w-lg border border-gray-300 shadow rounded-xl m-3 p-3">
           <div className="flex items-center">
             <div className="w-1/3">
               <label
@@ -126,27 +126,48 @@ const SignInPage: FC = () => {
           )}
         </form>
 
-        <table className="mt-10">
-          <thead>
+        <div className="mt-10 mx-2 text-sm text-gray-500">
+          <p>User List</p>
+        </div>
+        <table className="w-full max-w-sm text-sm text-left rtl:text-right text-gray-500">
+          <thead className="text-xs text-gray-700 uppercase bg-gray-50">
             <tr>
-              <th scope="col">Username</th>
-              <th scope="col">Password</th>
-              <th scope="col">Role</th>
+              <th scope="col" className="px-6 py-3">
+                Username
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Password
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Role
+              </th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">user1</th>
+            <tr className="bg-white border-b">
+              <th
+                scope="row"
+                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                user1
+              </th>
               <td>password</td>
               <td>user</td>
             </tr>
-            <tr>
-              <th scope="row">user2</th>
+            <tr className="bg-white border-b">
+              <th
+                scope="row"
+                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                user2
+              </th>
               <td>password</td>
               <td>user</td>
             </tr>
-            <tr>
-              <th scope="row">admin</th>
+            <tr className="bg-white border-b">
+              <th
+                scope="row"
+                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                admin
+              </th>
               <td>password</td>
               <td>admin</td>
             </tr>
