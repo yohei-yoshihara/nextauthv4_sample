@@ -26,7 +26,7 @@ const handler = NextAuth({
         if (!user) {
           return null;
         }
-        if (!bcrypt.compare(credentials.password, user.password)) {
+        if (!(await bcrypt.compare(credentials.password, user.password))) {
           return null;
         }
         return {
